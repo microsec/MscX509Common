@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7597A91A043D8D00DC55A0 /* MscCertificateUtils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155919517D5D003B0F87 /* MscCertificateUtils.h */; };
+		1ABCEC111A06D7E8008024E0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */; };
+		1ABCEC121A06D7E8008024E0 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCEC101A06D7E8008024E0 /* libssl.a */; };
+		1ABCEC1C1A06DDC7008024E0 /* MscOpenSSLExtension.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156319517D5D003B0F87 /* MscOpenSSLExtension.h */; };
+		1ABCEC1D1A06DDFE008024E0 /* NSString+MscASCIIExtension.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F1583195192FD003B0F87 /* NSString+MscASCIIExtension.h */; };
+		5844D8221993CBDF00850C7C /* MscX509CommonError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844D8211993CBDF00850C7C /* MscX509CommonError.m */; };
+		586DD4061994C89E00BDBB6A /* MscX509CommonError.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 5844D8201993CBDF00850C7C /* MscX509CommonError.h */; };
+		588057761951C84000FAB43C /* MscX509Name.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155719517D5D003B0F87 /* MscX509Name.h */; };
+		588057771951C84000FAB43C /* MscRSAKey_OpenSSL_RSA.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156719517D5D003B0F87 /* MscRSAKey_OpenSSL_RSA.h */; };
+		588057781951C84000FAB43C /* MscRSAKey.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156819517D5E003B0F87 /* MscRSAKey.h */; };
+		588057791951C84000FAB43C /* MscIssuerAndSubject.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155E19517D5D003B0F87 /* MscIssuerAndSubject.h */; };
+		5880577A1951C84000FAB43C /* MscIssuerAndSerial.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155C19517D5D003B0F87 /* MscIssuerAndSerial.h */; };
+		5880577B1951C84000FAB43C /* MscCertificateRevocationList_OpenSSL_X509_CRL.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155119517D5D003B0F87 /* MscCertificateRevocationList_OpenSSL_X509_CRL.h */; };
+		5880577C1951C84000FAB43C /* MscCertificateRevocationList.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155219517D5D003B0F87 /* MscCertificateRevocationList.h */; };
+		5880577D1951C84000FAB43C /* MscCertificate_OpenSSL_X509.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F154E19517D5D003B0F87 /* MscCertificate_OpenSSL_X509.h */; };
+		5880577E1951C84000FAB43C /* MscCertificate.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F154F19517D5D003B0F87 /* MscCertificate.h */; };
+		5880577F1951C84000FAB43C /* MscCertificateSigningRequest_OpenSSL_X509_REQ.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155419517D5D003B0F87 /* MscCertificateSigningRequest_OpenSSL_X509_REQ.h */; };
+		588057801951C84000FAB43C /* MscCertificateSigningRequest.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155519517D5D003B0F87 /* MscCertificateSigningRequest.h */; };
+		588057811951C84000FAB43C /* MscPKCS12_OpenSSL_PKCS12.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156419517D5D003B0F87 /* MscPKCS12_OpenSSL_PKCS12.h */; };
+		588057821951C84000FAB43C /* MscPKCS12.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156519517D5D003B0F87 /* MscPKCS12.h */; };
+		5880583B195423E200FAB43C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58821A14195031B100AB3D4D /* Foundation.framework */; };
+		58805843195423E200FAB43C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58805841195423E200FAB43C /* InfoPlist.strings */; };
+		5880584D195423FF00FAB43C /* MscRSAKeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5880584C195423FF00FAB43C /* MscRSAKeyTests.m */; };
+		5880584E195426F100FAB43C /* MscRSAKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F156919517D5E003B0F87 /* MscRSAKey.m */; };
+		5880585119542BE200FAB43C /* libMscX509Common.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58821A11195031B100AB3D4D /* libMscX509Common.a */; };
+		588058531954388100FAB43C /* MscCertificateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 588058521954388100FAB43C /* MscCertificateTests.m */; };
+		5880585519544EF800FAB43C /* MscCertificateSigningRequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5880585419544EF800FAB43C /* MscCertificateSigningRequestTests.m */; };
+		588058561954648B00FAB43C /* NSString+MscASCIIExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */; };
+		58821A15195031B100AB3D4D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58821A14195031B100AB3D4D /* Foundation.framework */; };
+		589F156A19517D5E003B0F87 /* MscCertificate.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155019517D5D003B0F87 /* MscCertificate.m */; };
+		589F156B19517D5E003B0F87 /* MscCertificateRevocationList.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155319517D5D003B0F87 /* MscCertificateRevocationList.m */; };
+		589F156C19517D5E003B0F87 /* MscCertificateSigningRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155619517D5D003B0F87 /* MscCertificateSigningRequest.m */; };
+		589F156D19517D5E003B0F87 /* MscX509Name.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155819517D5D003B0F87 /* MscX509Name.m */; };
+		589F156E19517D5E003B0F87 /* MscCertificateUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155A19517D5D003B0F87 /* MscCertificateUtils.m */; };
+		589F156F19517D5E003B0F87 /* MscIssuerAndSerial.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155D19517D5D003B0F87 /* MscIssuerAndSerial.m */; };
+		589F157019517D5E003B0F87 /* MscIssuerAndSubject.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F155F19517D5D003B0F87 /* MscIssuerAndSubject.m */; };
+		589F157119517D5E003B0F87 /* MscX509CommonLocalException.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F156119517D5D003B0F87 /* MscX509CommonLocalException.m */; };
+		589F157219517D5E003B0F87 /* MscOpenSSLExtension.c in Sources */ = {isa = PBXBuildFile; fileRef = 589F156219517D5D003B0F87 /* MscOpenSSLExtension.c */; };
+		589F157319517D5E003B0F87 /* MscPKCS12.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F156619517D5D003B0F87 /* MscPKCS12.m */; };
+		589F157419517D5E003B0F87 /* MscRSAKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F156919517D5E003B0F87 /* MscRSAKey.m */; };
+		589F1585195192FD003B0F87 /* NSString+MscASCIIExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */; };
+		58C9A5C919596F1C00FE9F9D /* MscPKCS12Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C9A5C819596F1C00FE9F9D /* MscPKCS12Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58821A0F195031B100AB3D4D /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				1ABCEC1D1A06DDFE008024E0 /* NSString+MscASCIIExtension.h in Copy Files */,
+				1ABCEC1C1A06DDC7008024E0 /* MscOpenSSLExtension.h in Copy Files */,
+				1A7597A91A043D8D00DC55A0 /* MscCertificateUtils.h in Copy Files */,
+				586DD4061994C89E00BDBB6A /* MscX509CommonError.h in Copy Files */,
+				588057761951C84000FAB43C /* MscX509Name.h in Copy Files */,
+				588057771951C84000FAB43C /* MscRSAKey_OpenSSL_RSA.h in Copy Files */,
+				588057781951C84000FAB43C /* MscRSAKey.h in Copy Files */,
+				588057791951C84000FAB43C /* MscIssuerAndSubject.h in Copy Files */,
+				5880577A1951C84000FAB43C /* MscIssuerAndSerial.h in Copy Files */,
+				5880577B1951C84000FAB43C /* MscCertificateRevocationList_OpenSSL_X509_CRL.h in Copy Files */,
+				5880577C1951C84000FAB43C /* MscCertificateRevocationList.h in Copy Files */,
+				5880577D1951C84000FAB43C /* MscCertificate_OpenSSL_X509.h in Copy Files */,
+				5880577E1951C84000FAB43C /* MscCertificate.h in Copy Files */,
+				5880577F1951C84000FAB43C /* MscCertificateSigningRequest_OpenSSL_X509_REQ.h in Copy Files */,
+				588057801951C84000FAB43C /* MscCertificateSigningRequest.h in Copy Files */,
+				588057811951C84000FAB43C /* MscPKCS12_OpenSSL_PKCS12.h in Copy Files */,
+				588057821951C84000FAB43C /* MscPKCS12.h in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../OpenSSL-for-iPhone-master/lib/libcrypto.a"; sourceTree = "<group>"; };
+		1ABCEC101A06D7E8008024E0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../OpenSSL-for-iPhone-master/lib/libssl.a"; sourceTree = "<group>"; };
+		5844D8201993CBDF00850C7C /* MscX509CommonError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscX509CommonError.h; sourceTree = "<group>"; };
+		5844D8211993CBDF00850C7C /* MscX509CommonError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscX509CommonError.m; sourceTree = "<group>"; };
+		58805838195423E100FAB43C /* MscX509CommonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MscX509CommonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		58805840195423E200FAB43C /* MscX509CommonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MscX509CommonTests-Info.plist"; sourceTree = "<group>"; };
+		58805842195423E200FAB43C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58805846195423E200FAB43C /* MscX509CommonTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MscX509CommonTests-Prefix.pch"; sourceTree = "<group>"; };
+		5880584C195423FF00FAB43C /* MscRSAKeyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscRSAKeyTests.m; sourceTree = "<group>"; };
+		588058521954388100FAB43C /* MscCertificateTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificateTests.m; sourceTree = "<group>"; };
+		5880585419544EF800FAB43C /* MscCertificateSigningRequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificateSigningRequestTests.m; sourceTree = "<group>"; };
+		58821A11195031B100AB3D4D /* libMscX509Common.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMscX509Common.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		58821A14195031B100AB3D4D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		58821A18195031B100AB3D4D /* MscX509Common-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MscX509Common-Prefix.pch"; sourceTree = "<group>"; };
+		589F154E19517D5D003B0F87 /* MscCertificate_OpenSSL_X509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificate_OpenSSL_X509.h; sourceTree = "<group>"; };
+		589F154F19517D5D003B0F87 /* MscCertificate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificate.h; sourceTree = "<group>"; };
+		589F155019517D5D003B0F87 /* MscCertificate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificate.m; sourceTree = "<group>"; };
+		589F155119517D5D003B0F87 /* MscCertificateRevocationList_OpenSSL_X509_CRL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificateRevocationList_OpenSSL_X509_CRL.h; sourceTree = "<group>"; };
+		589F155219517D5D003B0F87 /* MscCertificateRevocationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificateRevocationList.h; sourceTree = "<group>"; };
+		589F155319517D5D003B0F87 /* MscCertificateRevocationList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificateRevocationList.m; sourceTree = "<group>"; };
+		589F155419517D5D003B0F87 /* MscCertificateSigningRequest_OpenSSL_X509_REQ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificateSigningRequest_OpenSSL_X509_REQ.h; sourceTree = "<group>"; };
+		589F155519517D5D003B0F87 /* MscCertificateSigningRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificateSigningRequest.h; sourceTree = "<group>"; };
+		589F155619517D5D003B0F87 /* MscCertificateSigningRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificateSigningRequest.m; sourceTree = "<group>"; };
+		589F155719517D5D003B0F87 /* MscX509Name.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscX509Name.h; sourceTree = "<group>"; };
+		589F155819517D5D003B0F87 /* MscX509Name.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscX509Name.m; sourceTree = "<group>"; };
+		589F155919517D5D003B0F87 /* MscCertificateUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscCertificateUtils.h; sourceTree = "<group>"; };
+		589F155A19517D5D003B0F87 /* MscCertificateUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscCertificateUtils.m; sourceTree = "<group>"; };
+		589F155C19517D5D003B0F87 /* MscIssuerAndSerial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscIssuerAndSerial.h; sourceTree = "<group>"; };
+		589F155D19517D5D003B0F87 /* MscIssuerAndSerial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscIssuerAndSerial.m; sourceTree = "<group>"; };
+		589F155E19517D5D003B0F87 /* MscIssuerAndSubject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscIssuerAndSubject.h; sourceTree = "<group>"; };
+		589F155F19517D5D003B0F87 /* MscIssuerAndSubject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscIssuerAndSubject.m; sourceTree = "<group>"; };
+		589F156019517D5D003B0F87 /* MscX509CommonLocalException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscX509CommonLocalException.h; sourceTree = "<group>"; };
+		589F156119517D5D003B0F87 /* MscX509CommonLocalException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscX509CommonLocalException.m; sourceTree = "<group>"; };
+		589F156219517D5D003B0F87 /* MscOpenSSLExtension.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MscOpenSSLExtension.c; sourceTree = "<group>"; };
+		589F156319517D5D003B0F87 /* MscOpenSSLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscOpenSSLExtension.h; sourceTree = "<group>"; };
+		589F156419517D5D003B0F87 /* MscPKCS12_OpenSSL_PKCS12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscPKCS12_OpenSSL_PKCS12.h; sourceTree = "<group>"; };
+		589F156519517D5D003B0F87 /* MscPKCS12.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscPKCS12.h; sourceTree = "<group>"; };
+		589F156619517D5D003B0F87 /* MscPKCS12.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscPKCS12.m; sourceTree = "<group>"; };
+		589F156719517D5D003B0F87 /* MscRSAKey_OpenSSL_RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscRSAKey_OpenSSL_RSA.h; sourceTree = "<group>"; };
+		589F156819517D5E003B0F87 /* MscRSAKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscRSAKey.h; sourceTree = "<group>"; };
+		589F156919517D5E003B0F87 /* MscRSAKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscRSAKey.m; sourceTree = "<group>"; };
+		589F1583195192FD003B0F87 /* NSString+MscASCIIExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MscASCIIExtension.h"; sourceTree = "<group>"; };
+		589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MscASCIIExtension.m"; sourceTree = "<group>"; };
+		58C9A5C819596F1C00FE9F9D /* MscPKCS12Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscPKCS12Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58805835195423E100FAB43C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5880585119542BE200FAB43C /* libMscX509Common.a in Frameworks */,
+				5880583B195423E200FAB43C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58821A0E195031B100AB3D4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1ABCEC111A06D7E8008024E0 /* libcrypto.a in Frameworks */,
+				1ABCEC121A06D7E8008024E0 /* libssl.a in Frameworks */,
+				58821A15195031B100AB3D4D /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5880583E195423E200FAB43C /* MscX509CommonTests */ = {
+			isa = PBXGroup;
+			children = (
+				58C9A5C819596F1C00FE9F9D /* MscPKCS12Tests.m */,
+				5880583F195423E200FAB43C /* Supporting Files */,
+				5880584C195423FF00FAB43C /* MscRSAKeyTests.m */,
+				588058521954388100FAB43C /* MscCertificateTests.m */,
+				5880585419544EF800FAB43C /* MscCertificateSigningRequestTests.m */,
+			);
+			path = MscX509CommonTests;
+			sourceTree = "<group>";
+		};
+		5880583F195423E200FAB43C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58805840195423E200FAB43C /* MscX509CommonTests-Info.plist */,
+				58805841195423E200FAB43C /* InfoPlist.strings */,
+				58805846195423E200FAB43C /* MscX509CommonTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58821A08195031B100AB3D4D = {
+			isa = PBXGroup;
+			children = (
+				58821A16195031B100AB3D4D /* MscX509Common */,
+				5880583E195423E200FAB43C /* MscX509CommonTests */,
+				58821A13195031B100AB3D4D /* Frameworks */,
+				58821A12195031B100AB3D4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		58821A12195031B100AB3D4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				58821A11195031B100AB3D4D /* libMscX509Common.a */,
+				58805838195423E100FAB43C /* MscX509CommonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58821A13195031B100AB3D4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */,
+				1ABCEC101A06D7E8008024E0 /* libssl.a */,
+				58821A14195031B100AB3D4D /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58821A16195031B100AB3D4D /* MscX509Common */ = {
+			isa = PBXGroup;
+			children = (
+				589F157A19517DEB003B0F87 /* X509Name */,
+				589F157619517DBF003B0F87 /* RSAKey */,
+				589F157E19517E18003B0F87 /* Utils */,
+				589F157D19517E0A003B0F87 /* Extensions */,
+				589F157C19517DFD003B0F87 /* IssuerAndSubject */,
+				589F157B19517DF6003B0F87 /* IssuerAndSerial */,
+				589F157919517DE1003B0F87 /* CertificateRevocationList */,
+				589F157819517DD5003B0F87 /* Certificate */,
+				589F157719517DC7003B0F87 /* CertificateSigningRequest */,
+				589F157519517DB9003B0F87 /* PKCS12 */,
+				589F156019517D5D003B0F87 /* MscX509CommonLocalException.h */,
+				589F156119517D5D003B0F87 /* MscX509CommonLocalException.m */,
+				58821A17195031B100AB3D4D /* Supporting Files */,
+				5844D8201993CBDF00850C7C /* MscX509CommonError.h */,
+				5844D8211993CBDF00850C7C /* MscX509CommonError.m */,
+			);
+			name = MscX509Common;
+			path = src;
+			sourceTree = "<group>";
+		};
+		58821A17195031B100AB3D4D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				58821A18195031B100AB3D4D /* MscX509Common-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		589F157519517DB9003B0F87 /* PKCS12 */ = {
+			isa = PBXGroup;
+			children = (
+				589F156419517D5D003B0F87 /* MscPKCS12_OpenSSL_PKCS12.h */,
+				589F156519517D5D003B0F87 /* MscPKCS12.h */,
+				589F156619517D5D003B0F87 /* MscPKCS12.m */,
+			);
+			name = PKCS12;
+			sourceTree = "<group>";
+		};
+		589F157619517DBF003B0F87 /* RSAKey */ = {
+			isa = PBXGroup;
+			children = (
+				589F156719517D5D003B0F87 /* MscRSAKey_OpenSSL_RSA.h */,
+				589F156819517D5E003B0F87 /* MscRSAKey.h */,
+				589F156919517D5E003B0F87 /* MscRSAKey.m */,
+			);
+			name = RSAKey;
+			sourceTree = "<group>";
+		};
+		589F157719517DC7003B0F87 /* CertificateSigningRequest */ = {
+			isa = PBXGroup;
+			children = (
+				589F155419517D5D003B0F87 /* MscCertificateSigningRequest_OpenSSL_X509_REQ.h */,
+				589F155519517D5D003B0F87 /* MscCertificateSigningRequest.h */,
+				589F155619517D5D003B0F87 /* MscCertificateSigningRequest.m */,
+			);
+			name = CertificateSigningRequest;
+			sourceTree = "<group>";
+		};
+		589F157819517DD5003B0F87 /* Certificate */ = {
+			isa = PBXGroup;
+			children = (
+				589F154E19517D5D003B0F87 /* MscCertificate_OpenSSL_X509.h */,
+				589F154F19517D5D003B0F87 /* MscCertificate.h */,
+				589F155019517D5D003B0F87 /* MscCertificate.m */,
+			);
+			name = Certificate;
+			sourceTree = "<group>";
+		};
+		589F157919517DE1003B0F87 /* CertificateRevocationList */ = {
+			isa = PBXGroup;
+			children = (
+				589F155119517D5D003B0F87 /* MscCertificateRevocationList_OpenSSL_X509_CRL.h */,
+				589F155219517D5D003B0F87 /* MscCertificateRevocationList.h */,
+				589F155319517D5D003B0F87 /* MscCertificateRevocationList.m */,
+			);
+			name = CertificateRevocationList;
+			sourceTree = "<group>";
+		};
+		589F157A19517DEB003B0F87 /* X509Name */ = {
+			isa = PBXGroup;
+			children = (
+				589F155719517D5D003B0F87 /* MscX509Name.h */,
+				589F155819517D5D003B0F87 /* MscX509Name.m */,
+			);
+			name = X509Name;
+			sourceTree = "<group>";
+		};
+		589F157B19517DF6003B0F87 /* IssuerAndSerial */ = {
+			isa = PBXGroup;
+			children = (
+				589F155C19517D5D003B0F87 /* MscIssuerAndSerial.h */,
+				589F155D19517D5D003B0F87 /* MscIssuerAndSerial.m */,
+			);
+			name = IssuerAndSerial;
+			sourceTree = "<group>";
+		};
+		589F157C19517DFD003B0F87 /* IssuerAndSubject */ = {
+			isa = PBXGroup;
+			children = (
+				589F155E19517D5D003B0F87 /* MscIssuerAndSubject.h */,
+				589F155F19517D5D003B0F87 /* MscIssuerAndSubject.m */,
+			);
+			name = IssuerAndSubject;
+			sourceTree = "<group>";
+		};
+		589F157D19517E0A003B0F87 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				589F1583195192FD003B0F87 /* NSString+MscASCIIExtension.h */,
+				589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */,
+				589F156219517D5D003B0F87 /* MscOpenSSLExtension.c */,
+				589F156319517D5D003B0F87 /* MscOpenSSLExtension.h */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		589F157E19517E18003B0F87 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				589F155919517D5D003B0F87 /* MscCertificateUtils.h */,
+				589F155A19517D5D003B0F87 /* MscCertificateUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58805837195423E100FAB43C /* MscX509CommonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5880584B195423E200FAB43C /* Build configuration list for PBXNativeTarget "MscX509CommonTests" */;
+			buildPhases = (
+				58805834195423E100FAB43C /* Sources */,
+				58805835195423E100FAB43C /* Frameworks */,
+				58805836195423E100FAB43C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MscX509CommonTests;
+			productName = MscX509CommonTests;
+			productReference = 58805838195423E100FAB43C /* MscX509CommonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		58821A10195031B100AB3D4D /* MscX509Common */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58821A34195031B100AB3D4D /* Build configuration list for PBXNativeTarget "MscX509Common" */;
+			buildPhases = (
+				58821A0D195031B100AB3D4D /* Sources */,
+				58821A0E195031B100AB3D4D /* Frameworks */,
+				58821A0F195031B100AB3D4D /* Copy Files */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MscX509Common;
+			productName = X509Common;
+			productReference = 58821A11195031B100AB3D4D /* libMscX509Common.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58821A09195031B100AB3D4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Microsec;
+				TargetAttributes = {
+					58805837195423E100FAB43C = {
+						TestTargetID = 58821A10195031B100AB3D4D;
+					};
+				};
+			};
+			buildConfigurationList = 58821A0C195031B100AB3D4D /* Build configuration list for PBXProject "MscX509Common" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58821A08195031B100AB3D4D;
+			productRefGroup = 58821A12195031B100AB3D4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58821A10195031B100AB3D4D /* MscX509Common */,
+				58805837195423E100FAB43C /* MscX509CommonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		58805836195423E100FAB43C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58805843195423E200FAB43C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58805834195423E100FAB43C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				588058561954648B00FAB43C /* NSString+MscASCIIExtension.m in Sources */,
+				5880584E195426F100FAB43C /* MscRSAKey.m in Sources */,
+				5880584D195423FF00FAB43C /* MscRSAKeyTests.m in Sources */,
+				588058531954388100FAB43C /* MscCertificateTests.m in Sources */,
+				5880585519544EF800FAB43C /* MscCertificateSigningRequestTests.m in Sources */,
+				58C9A5C919596F1C00FE9F9D /* MscPKCS12Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58821A0D195031B100AB3D4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				589F156D19517D5E003B0F87 /* MscX509Name.m in Sources */,
+				589F156A19517D5E003B0F87 /* MscCertificate.m in Sources */,
+				589F157419517D5E003B0F87 /* MscRSAKey.m in Sources */,
+				5844D8221993CBDF00850C7C /* MscX509CommonError.m in Sources */,
+				589F157019517D5E003B0F87 /* MscIssuerAndSubject.m in Sources */,
+				589F157119517D5E003B0F87 /* MscX509CommonLocalException.m in Sources */,
+				589F156B19517D5E003B0F87 /* MscCertificateRevocationList.m in Sources */,
+				589F156E19517D5E003B0F87 /* MscCertificateUtils.m in Sources */,
+				589F156F19517D5E003B0F87 /* MscIssuerAndSerial.m in Sources */,
+				589F157319517D5E003B0F87 /* MscPKCS12.m in Sources */,
+				589F1585195192FD003B0F87 /* NSString+MscASCIIExtension.m in Sources */,
+				589F157219517D5E003B0F87 /* MscOpenSSLExtension.c in Sources */,
+				589F156C19517D5E003B0F87 /* MscCertificateSigningRequest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		58805841195423E200FAB43C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58805842195423E200FAB43C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		58805849195423E200FAB43C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mihaly Dalos (Z3CV697G37)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MscX509CommonTests/MscX509CommonTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MscX509CommonTests/MscX509CommonTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5880584A195423E200FAB43C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Mihaly Dalos (Z3CV697G37)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MscX509CommonTests/MscX509CommonTests-Prefix.pch";
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "MscX509CommonTests/MscX509CommonTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		58821A32195031B100AB3D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libraries/openssl/lib";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/libraries/openssl/include";
+			};
+			name = Debug;
+		};
+		58821A33195031B100AB3D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/libraries/openssl/lib";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/libraries/openssl/include";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58821A35195031B100AB3D4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/X509Common.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/MscX509Common-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = MscX509Common;
+				PUBLIC_HEADERS_FOLDER_PATH = build/include;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Debug;
+		};
+		58821A36195031B100AB3D4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/X509Common.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "src/MscX509Common-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = MscX509Common;
+				PUBLIC_HEADERS_FOLDER_PATH = build/include;
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(inherited)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5880584B195423E200FAB43C /* Build configuration list for PBXNativeTarget "MscX509CommonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58805849195423E200FAB43C /* Debug */,
+				5880584A195423E200FAB43C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58821A0C195031B100AB3D4D /* Build configuration list for PBXProject "MscX509Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58821A32195031B100AB3D4D /* Debug */,
+				58821A33195031B100AB3D4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58821A34195031B100AB3D4D /* Build configuration list for PBXNativeTarget "MscX509Common" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58821A35195031B100AB3D4D /* Debug */,
+				58821A36195031B100AB3D4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58821A09195031B100AB3D4D /* Project object */;
+}
