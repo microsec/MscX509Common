@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A11AA3F1A8DDF2C000FCBC1 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A11AA3D1A8DDF2C000FCBC1 /* libcrypto.a */; };
+		1A11AA401A8DDF2C000FCBC1 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A11AA3E1A8DDF2C000FCBC1 /* libssl.a */; };
 		1A7597A91A043D8D00DC55A0 /* MscCertificateUtils.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F155919517D5D003B0F87 /* MscCertificateUtils.h */; };
-		1ABCEC111A06D7E8008024E0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */; };
-		1ABCEC121A06D7E8008024E0 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCEC101A06D7E8008024E0 /* libssl.a */; };
 		1ABCEC1C1A06DDC7008024E0 /* MscOpenSSLExtension.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F156319517D5D003B0F87 /* MscOpenSSLExtension.h */; };
 		1ABCEC1D1A06DDFE008024E0 /* NSString+MscASCIIExtension.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 589F1583195192FD003B0F87 /* NSString+MscASCIIExtension.h */; };
 		5844D8221993CBDF00850C7C /* MscX509CommonError.m in Sources */ = {isa = PBXBuildFile; fileRef = 5844D8211993CBDF00850C7C /* MscX509CommonError.m */; };
@@ -82,6 +82,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A11AA3D1A8DDF2C000FCBC1 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = libraries/openssl/lib/libcrypto.a; sourceTree = "<group>"; };
+		1A11AA3E1A8DDF2C000FCBC1 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = libraries/openssl/lib/libssl.a; sourceTree = "<group>"; };
 		1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../OpenSSL-for-iPhone-master/lib/libcrypto.a"; sourceTree = "<group>"; };
 		1ABCEC101A06D7E8008024E0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../OpenSSL-for-iPhone-master/lib/libssl.a"; sourceTree = "<group>"; };
 		5844D8201993CBDF00850C7C /* MscX509CommonError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscX509CommonError.h; sourceTree = "<group>"; };
@@ -142,8 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABCEC111A06D7E8008024E0 /* libcrypto.a in Frameworks */,
-				1ABCEC121A06D7E8008024E0 /* libssl.a in Frameworks */,
+				1A11AA3F1A8DDF2C000FCBC1 /* libcrypto.a in Frameworks */,
+				1A11AA401A8DDF2C000FCBC1 /* libssl.a in Frameworks */,
 				58821A15195031B100AB3D4D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,6 +197,8 @@
 		58821A13195031B100AB3D4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A11AA3D1A8DDF2C000FCBC1 /* libcrypto.a */,
+				1A11AA3E1A8DDF2C000FCBC1 /* libssl.a */,
 				1ABCEC0F1A06D7E8008024E0 /* libcrypto.a */,
 				1ABCEC101A06D7E8008024E0 /* libssl.a */,
 				58821A14195031B100AB3D4D /* Foundation.framework */,
@@ -586,7 +590,10 @@
 				DSTROOT = /tmp/X509Common.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/MscX509Common-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libraries/openssl/lib",
+				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MscX509Common;
@@ -602,7 +609,10 @@
 				DSTROOT = /tmp/X509Common.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "src/MscX509Common-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libraries/openssl/lib",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = MscX509Common;
 				PUBLIC_HEADERS_FOLDER_PATH = build/include;
