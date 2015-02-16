@@ -91,7 +91,7 @@
                 @throw [MscX509CommonLocalException exceptionWithCode:FailedToGeneratePKCS12];
             }
             
-            pkcs12 = PKCS12_create(password ? (char*)[password ASCIIString] : NULL, NULL, rsaKey._evp_pkey, certificate._x509, NULL, NID_pbe_WithSHA1And3_Key_TripleDES_CBC, NID_pbe_WithSHA1And3_Key_TripleDES_CBC, 0, 0, KEY_SIG);
+            pkcs12 = PKCS12_create(password ? (char*)[password UTF8String] : NULL, NULL, rsaKey._evp_pkey, certificate._x509, NULL, NID_pbe_WithSHA1And3_Key_TripleDES_CBC, NID_pbe_WithSHA1And3_Key_TripleDES_CBC, 0, 0, KEY_SIG);
             if (!pkcs12) {
                 NSLog(@"Failed to generate PKCS12, function: PKCS12_create");
                 @throw [MscX509CommonLocalException exceptionWithCode:FailedToGeneratePKCS12];
@@ -302,6 +302,41 @@
     @finally {
         
         OPENSSL_free(pkcs12);
+    }
+}
+
+-(NSData*)signHash:(NSData*)hash password:(NSString*)password error:(MscX509CommonError**)error {
+    
+    EVP_PKEY* pKey = NULL;
+    
+    @try {
+        
+        int returnCode;
+        returnCode = PKCS12_parse(_pkcs12, [password UTF8String], &pKey, NULL, NULL);
+        if (returnCode != 1) {
+            NSLog(@"Failed to open PKCS12 file, function PKCS12_parse returned with %d", returnCode);
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToParsePKCS12];
+        }
+        
+        RSA* rsa = EVP_PKEY_get1_RSA(pKey);
+        if (!rsa) {
+            NSLog(@"Failed to read private key, function: EVP_PKEY_get1_RSA");
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadKey];
+        }
+        
+        MscRSAKey* rsaKey = [[MscRSAKey alloc] initWithRSA:rsa];
+        return [rsaKey signHash:hash error:error];
+    }
+    @catch(MscX509CommonLocalException* e) {
+        
+        if (error) {
+            *error = [MscX509CommonError errorWithCode:e.errorCode];
+        }
+        return nil;
+    }
+    @finally {
+        
+        if (pKey) EVP_PKEY_free(pKey);
     }
 }
 

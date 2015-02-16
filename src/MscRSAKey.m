@@ -14,6 +14,9 @@
 #import <openssl/rsa.h>
 #import <openssl/pem.h>
 
+#define SHA256PREFIX        {0x30, 0x31, 0x30, 0x0d, 0x06, 0x09, 0x60, 0x86, 0x48, 0x01, 0x65, 0x03, 0x04, 0x02, 0x01, 0x05, 0x00, 0x04, 0x20}
+#define SHA256PREFIXLENGTH  19
+
 @implementation MscRSAKey
 
 @synthesize _rsa, _evp_pkey = _mEVP_pkey;
@@ -114,6 +117,15 @@
         }
     }
     return nil;
+}
+
+-(id)initWithRSA:(RSA*)rsa
+{
+    self = [super init];
+    if (self) {
+        _rsa = rsa;
+    }
+    return self;
 }
 
 -(void)saveToPath:(NSString *)path error:(MscX509CommonError **)error {
@@ -270,6 +282,49 @@
         }
     }
     return _mEVP_pkey;
+}
+
+-(NSData*)signHash:(NSData*)hash error:(MscX509CommonError**)error {
+    
+    unsigned char* rsaOutput = NULL;
+    
+    @try {
+        
+        int returnCode;
+        
+        unsigned char sha256Prefix[] = SHA256PREFIX;
+        NSData* sha256PrefixData = [[NSData alloc] initWithBytes:(const void*)sha256Prefix length:SHA256PREFIXLENGTH];
+        
+        NSMutableData* inputData = [[NSMutableData alloc] initWithData:sha256PrefixData];
+        [inputData appendData:hash];
+        
+        int keySize = RSA_size(self._rsa);
+        rsaOutput = OPENSSL_malloc(keySize);
+        if (!rsaOutput) {
+            NSLog(@"Failed to allocate memory for variable: rsaOutput");
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToAllocateMemory];
+        }
+        
+        returnCode = RSA_private_encrypt((int)[inputData length], (unsigned char*)[inputData bytes], rsaOutput, self._rsa, RSA_PKCS1_PADDING);
+        if (returnCode <= 0) {
+            NSLog(@"Failed to sign hash, function RSA_private_encrypt returned with %d", returnCode);
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToSignHash];
+        }
+        
+        NSData* outputData = [NSData dataWithBytes:rsaOutput length:returnCode];
+        return outputData;
+    }
+    @catch (MscX509CommonLocalException *e) {
+        
+        if (error) {
+            *error = [MscX509CommonError errorWithCode:e.errorCode];
+        }
+        return nil;
+    }
+    @finally {
+        
+        if (rsaOutput) OPENSSL_free(rsaOutput);
+    }
 }
 
 -(void)dealloc {

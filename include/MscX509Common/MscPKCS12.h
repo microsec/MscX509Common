@@ -19,5 +19,6 @@
 -(BOOL)isEqualToMscPKCS12:(MscPKCS12*)otherMscPKCS12;
 -(NSData*)data;
 -(BOOL)openWithPassword:(NSString*)password;
+-(NSData*)signHash:(NSData*)hash password:(NSString*)password error:(MscX509CommonError**)error;
 
 @end

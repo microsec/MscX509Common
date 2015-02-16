@@ -11,7 +11,9 @@
 
 @interface MscRSAKey ()
 
-@property RSA* _rsa;
+@property(readonly) RSA* _rsa;
 @property(readonly) EVP_PKEY* _evp_pkey;
+
+-(id)initWithRSA:(RSA*)rsa;
 
 @end

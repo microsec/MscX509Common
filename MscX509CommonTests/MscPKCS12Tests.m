@@ -98,6 +98,21 @@
     XCTAssertTrue([pfx2 isEqualToMscPKCS12:savedPkcs12_2], @"MscPKCS12 objects are not equal");
 }
 
+-(void)testSign {
+    
+    
+    MscX509CommonError* signError;
+    NSString* data = @"60d33ebbf3bc83a27814af22e5b0604088a635e5da0995f749289bf11d0edcea";
+    NSData* d = [[NSData alloc] initWithBase64EncodedString:data options:0];
+    
+    NSData* signedHash1 = [rsaKey signHash:d error:&signError];
+    XCTAssertNil(signError, @"Failed to sign hash");
+    NSData* signedHash2 = [pfx1 signHash:d password:password1 error:&signError];
+    XCTAssertNil(signError, @"Failed to sign hash");
+    
+    XCTAssertEqualObjects(signedHash1, signedHash2, @"Signatures are not equal");
+}
+
 -(void)testSerializeAndDeserialize
 {
     NSArray *pkcs12_objects = [[NSArray alloc] initWithObjects:pfx1, pfx2, nil];

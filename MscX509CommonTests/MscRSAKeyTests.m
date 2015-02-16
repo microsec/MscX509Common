@@ -69,6 +69,17 @@
     XCTAssertTrue([rsaKey4096bit isEqualToMscRSA:savedRSAKey4096bit], @"MscRSAKey objects are not equal");
 }
 
+-(void)testSign {
+    
+    MscX509CommonError* signError;
+    NSString* data = @"60d33ebbf3bc83a27814af22e5b0604088a635e5da0995f749289bf11d0edcea";
+    NSData* d = [[NSData alloc] initWithBase64EncodedString:data options:0];
+    
+    NSData* signedData = [rsaKey2048bit signHash:d error:&signError];
+    XCTAssertNil(signError, @"Failed to sign hash");
+    XCTAssertNotNil(signedData, @"SignedData is empty");
+}
+
 -(void)testSerializeAndDeserialize
 {
     NSArray *rsaKeys = [[NSArray alloc] initWithObjects:rsaKey2048bit, rsaKey4096bit, nil];

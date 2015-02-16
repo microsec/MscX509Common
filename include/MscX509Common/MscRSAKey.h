@@ -21,5 +21,6 @@ typedef NS_ENUM(NSUInteger, KeySize) {
 -(id)initWithContentsOfFile:(NSString*)path error:(MscX509CommonError**)error;
 -(void)saveToPath:(NSString *)path error:(MscX509CommonError**)error;
 -(BOOL)isEqualToMscRSA:(MscRSAKey*)otherMscRSAKey;
+-(NSData*)signHash:(NSData*)hash error:(MscX509CommonError**)error;
 
 @end
