@@ -49,6 +49,9 @@
 		589F157419517D5E003B0F87 /* MscRSAKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F156919517D5E003B0F87 /* MscRSAKey.m */; };
 		589F1585195192FD003B0F87 /* NSString+MscASCIIExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */; };
 		58C9A5C919596F1C00FE9F9D /* MscPKCS12Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C9A5C819596F1C00FE9F9D /* MscPKCS12Tests.m */; };
+		6D3884E91A9B2A8F00F6F057 /* MscPKCS7.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3884E81A9B2A8F00F6F057 /* MscPKCS7.m */; };
+		6D408B021A9DFF2500BD772A /* MscPKCS7Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D408B011A9DFF2500BD772A /* MscPKCS7Tests.m */; };
+		6D408B031A9F27A800BD772A /* MscPKCS7.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 6D3884E71A9B2A8F00F6F057 /* MscPKCS7.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +61,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				6D408B031A9F27A800BD772A /* MscPKCS7.h in Copy Files */,
 				1ABCEC1D1A06DDFE008024E0 /* NSString+MscASCIIExtension.h in Copy Files */,
 				1ABCEC1C1A06DDC7008024E0 /* MscOpenSSLExtension.h in Copy Files */,
 				1A7597A91A043D8D00DC55A0 /* MscCertificateUtils.h in Copy Files */,
@@ -128,6 +132,9 @@
 		589F1583195192FD003B0F87 /* NSString+MscASCIIExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MscASCIIExtension.h"; sourceTree = "<group>"; };
 		589F1584195192FD003B0F87 /* NSString+MscASCIIExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MscASCIIExtension.m"; sourceTree = "<group>"; };
 		58C9A5C819596F1C00FE9F9D /* MscPKCS12Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscPKCS12Tests.m; sourceTree = "<group>"; };
+		6D3884E71A9B2A8F00F6F057 /* MscPKCS7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MscPKCS7.h; sourceTree = "<group>"; };
+		6D3884E81A9B2A8F00F6F057 /* MscPKCS7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscPKCS7.m; sourceTree = "<group>"; };
+		6D408B011A9DFF2500BD772A /* MscPKCS7Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MscPKCS7Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +168,7 @@
 				5880584C195423FF00FAB43C /* MscRSAKeyTests.m */,
 				588058521954388100FAB43C /* MscCertificateTests.m */,
 				5880585419544EF800FAB43C /* MscCertificateSigningRequestTests.m */,
+				6D408B011A9DFF2500BD772A /* MscPKCS7Tests.m */,
 			);
 			path = MscX509CommonTests;
 			sourceTree = "<group>";
@@ -209,6 +217,7 @@
 		58821A16195031B100AB3D4D /* MscX509Common */ = {
 			isa = PBXGroup;
 			children = (
+				6D3884E61A9B2A7C00F6F057 /* PKCS7 */,
 				589F157A19517DEB003B0F87 /* X509Name */,
 				589F157619517DBF003B0F87 /* RSAKey */,
 				589F157E19517E18003B0F87 /* Utils */,
@@ -334,6 +343,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		6D3884E61A9B2A7C00F6F057 /* PKCS7 */ = {
+			isa = PBXGroup;
+			children = (
+				6D3884E71A9B2A8F00F6F057 /* MscPKCS7.h */,
+				6D3884E81A9B2A8F00F6F057 /* MscPKCS7.m */,
+			);
+			name = PKCS7;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -425,6 +443,7 @@
 				588058531954388100FAB43C /* MscCertificateTests.m in Sources */,
 				5880585519544EF800FAB43C /* MscCertificateSigningRequestTests.m in Sources */,
 				58C9A5C919596F1C00FE9F9D /* MscPKCS12Tests.m in Sources */,
+				6D408B021A9DFF2500BD772A /* MscPKCS7Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +461,7 @@
 				589F156E19517D5E003B0F87 /* MscCertificateUtils.m in Sources */,
 				589F156F19517D5E003B0F87 /* MscIssuerAndSerial.m in Sources */,
 				589F157319517D5E003B0F87 /* MscPKCS12.m in Sources */,
+				6D3884E91A9B2A8F00F6F057 /* MscPKCS7.m in Sources */,
 				589F1585195192FD003B0F87 /* NSString+MscASCIIExtension.m in Sources */,
 				589F157219517D5E003B0F87 /* MscOpenSSLExtension.c in Sources */,
 				589F156C19517D5E003B0F87 /* MscCertificateSigningRequest.m in Sources */,

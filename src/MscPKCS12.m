@@ -154,7 +154,7 @@
     @try {
         
         int returnCode;
-        returnCode = PKCS12_parse(_pkcs12, [password ASCIIString], &key, &certificate, NULL);
+        returnCode = PKCS12_parse(_pkcs12, [password UTF8String], &key, &certificate, NULL);
         if (returnCode != 1) {
             NSLog(@"Failed to parse PKCS12 file, function PKCS12_parse returned with %d", returnCode);
             @throw [MscX509CommonLocalException exceptionWithCode:FailedToParsePKCS12];
@@ -172,6 +172,36 @@
     @finally {
         
         EVP_PKEY_free(key);
+    }
+}
+
+-(MscRSAKey*)getRSAKeyWithPassword:(NSString*)password error:(MscX509CommonError**)error {
+    
+    X509* certificate = NULL;
+    EVP_PKEY* key = NULL;
+    
+    @try {
+        
+        int returnCode;
+        returnCode = PKCS12_parse(_pkcs12, [password UTF8String], &key, &certificate, NULL);
+        if (returnCode != 1) {
+            NSLog(@"Failed to parse PKCS12 file, function PKCS12_parse returned with %d", returnCode);
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToParsePKCS12];
+        }
+        return [[MscRSAKey alloc] initWithEVP_PKEY:key];
+    }
+    @catch (MscX509CommonLocalException *e) {
+        
+        if (error) {
+            *error = [MscX509CommonError errorWithCode:e.errorCode];
+        }
+        
+        EVP_PKEY_free(key);
+        return nil;
+    }
+    @finally {
+        
+        X509_free(certificate);
     }
 }
 

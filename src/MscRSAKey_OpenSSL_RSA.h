@@ -15,5 +15,6 @@
 @property(readonly) EVP_PKEY* _evp_pkey;
 
 -(id)initWithRSA:(RSA*)rsa;
+-(id)initWithEVP_PKEY:(EVP_PKEY*)evp_pkey;
 
 @end

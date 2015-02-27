@@ -439,6 +439,46 @@
     return NO;
 }
 
+-(NSString*)PEMFormat {
+    
+    BIO* memBIO = NULL;
+    
+    @try {
+        
+        int returnCode;
+        
+        memBIO = BIO_new(BIO_s_mem());
+        if (!memBIO) {
+            NSLog(@"Failed to allocate memory for variable: memBIO");
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToAllocateMemory];
+        }
+        
+        returnCode = PEM_write_bio_X509(memBIO, self._x509);
+        if (returnCode != 1) {
+            NSLog(@"Failed to read certificate, function PEM_write_bio_X509 returned with: %d", returnCode);
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadCertificate];
+        }
+        
+        char* pemFormat = NULL;
+        long pemFormatLength = BIO_get_mem_data(memBIO, &pemFormat);
+        if (pemFormatLength < 1) {
+            NSLog(@"Failed to read certificate, function BIO_get_mem_data returned with: %ld", pemFormatLength);
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadCertificate];
+        }
+        
+        return [[NSString alloc] initWithBytes:pemFormat length:pemFormatLength encoding:NSASCIIStringEncoding];
+        
+    }
+    @catch (MscX509CommonLocalException *e) {
+        
+        return nil;
+    }
+    @finally {
+        
+        BIO_free(memBIO);
+    }
+}
+
 -(void)dealloc {
     X509_free(_x509);
 }

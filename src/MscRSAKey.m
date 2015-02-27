@@ -128,6 +128,19 @@
     return self;
 }
 
+-(id)initWithEVP_PKEY:(EVP_PKEY*)evp_pkey {
+    self = [super init];
+    if (self) {
+        _mEVP_pkey = evp_pkey;
+        _rsa = EVP_PKEY_get1_RSA(_mEVP_pkey);
+        
+        if (!_rsa) {
+            return nil;
+        }
+    }
+    return self;
+}
+
 -(void)saveToPath:(NSString *)path error:(MscX509CommonError **)error {
     
     FILE* file = NULL;

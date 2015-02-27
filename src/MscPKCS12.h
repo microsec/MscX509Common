@@ -16,6 +16,7 @@
 -(id)initWithRSAKey:(MscRSAKey*)rsaKey certificate:(MscCertificate*)certificate password:(NSString*)password error:(MscX509CommonError**)error;
 -(void)saveToPath:(NSString *)path error:(MscX509CommonError **)error;
 -(MscCertificate*)getCertificateWithPassword:(NSString*)password error:(MscX509CommonError**)error;
+-(MscRSAKey*)getRSAKeyWithPassword:(NSString*)password error:(MscX509CommonError**)error;
 -(BOOL)isEqualToMscPKCS12:(MscPKCS12*)otherMscPKCS12;
 -(NSData*)data;
 -(BOOL)openWithPassword:(NSString*)password;

@@ -42,6 +42,8 @@
 #define FailedToConvertASN1_TIME                    1031
 #define FailedToDigestCertificate                   1032
 #define FailedToSignHash                            1033
+#define FailedToCreatePKCS7Signature                1034
+#define FailedToEncodePKCS7                         1035
 
 @interface MscX509CommonError : NSError
 

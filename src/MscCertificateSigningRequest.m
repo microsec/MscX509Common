@@ -33,13 +33,13 @@
             
             if (!subject) {
                 NSLog(@"Failed to generate certificate signing request, subject parameter missing");
-                @throw [MscX509CommonError errorWithCode:FailedToGenerateRequest];
+                @throw [MscX509CommonLocalException exceptionWithCode:FailedToGenerateRequest];
             }
             
             request = X509_REQ_new();
             if (!request) {
                 NSLog(@"Failed to allocate memory for variable: request");
-                @throw [MscX509CommonError errorWithCode:FailedToAllocateMemory];
+                @throw [MscX509CommonLocalException exceptionWithCode:FailedToAllocateMemory];
             }
             
             //Set DN
@@ -47,14 +47,14 @@
             returnCode = X509_REQ_set_subject_name(request, name);
             if (returnCode != 1) {
                 NSLog(@"Failed to generate request, function X509_REQ_set_subject_name returned with %d", returnCode);
-                @throw [MscX509CommonError errorWithCode:FailedToGenerateRequest];
+                @throw [MscX509CommonLocalException exceptionWithCode:FailedToGenerateRequest];
             }
             
             if (challengePassword && ![challengePassword isEmpty]) {
                 returnCode = X509_REQ_add1_attr_by_NID(request, NID_pkcs9_challengePassword, MBSTRING_UTF8, (const unsigned char*)[challengePassword UTF8String], -1);
                 if (returnCode != 1) {
                     NSLog(@"Failed to generate request, function X509_REQ_add1_attr_by_NID returned with %d", returnCode);
-                    @throw [MscX509CommonError errorWithCode:FailedToGenerateRequest];
+                    @throw [MscX509CommonLocalException exceptionWithCode:FailedToGenerateRequest];
                 }
             }
             
@@ -85,13 +85,13 @@
             file = fopen([path fileSystemRepresentation], "r");
             if (!file) {
                 NSLog(@"Failed to open file for read: %@", path);
-                @throw [MscX509CommonError errorWithCode:IOError];
+                @throw [MscX509CommonLocalException exceptionWithCode:IOError];
             }
             
             request = PEM_read_X509_REQ(file, NULL, NULL, NULL);
             if (!request) {
                 NSLog(@"Failed to read request file");
-                @throw [MscX509CommonError errorWithCode:FailedToReadRequest];
+                @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadRequest];
             }
             _request = request;
             return self;
@@ -123,13 +123,13 @@
         file = fopen([path fileSystemRepresentation], "w");
         if (!file) {
             NSLog(@"Failed to open file for write: %@", path);
-            @throw [MscX509CommonError errorWithCode:IOError];
+            @throw [MscX509CommonLocalException exceptionWithCode:IOError];
         }
         
         returnCode = PEM_write_X509_REQ(file, _request);
         if (returnCode != 1) {
             NSLog(@"Failed to write request file, function PEM_write_X509_REQ returned with %d", returnCode);
-            @throw [MscX509CommonError errorWithCode:FailedToWriteRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToWriteRequest];
         }
     }
     @catch (MscX509CommonLocalException *e) {
@@ -153,24 +153,24 @@
         
         if (!rsaKey) {
             NSLog(@"Failed to generate certificate signing request, rsaKey parameter missing");
-            @throw [MscX509CommonError errorWithCode:FailedToGenerateRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToGenerateRequest];
         }
         
         if (!fingerPrintAlgorithm) {
             NSLog(@"Failed to generate certificate signing request, fingerPrintAlgorithm parameter missing");
-            @throw [MscX509CommonError errorWithCode:FailedToGenerateRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToGenerateRequest];
         }
         
         returnCode = X509_REQ_set_pubkey(_request, rsaKey._evp_pkey);
         if (returnCode != 1) {
             NSLog(@"Failed to sign request, function X509_REQ_set_pubkey returned with %d", returnCode);
-            @throw [MscX509CommonError errorWithCode:FailedToSignRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToSignRequest];
         }
         
         returnCode = X509_REQ_sign(_request, rsaKey._evp_pkey, EVP_get_digestbyname([[MscCertificateUtils getFingerPrintAlgorithmNameByEnum:fingerPrintAlgorithm] ASCIIString]));
         if (returnCode == 0) {
             NSLog(@"Failed to sign request, function X509_REQ_sign returned with %d", returnCode);
-            @throw [MscX509CommonError errorWithCode:FailedToSignRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToSignRequest];
         }
     }
     @catch (MscX509CommonLocalException *e) {
@@ -191,7 +191,7 @@
         
         if (requestDataLength < 1) {
             NSLog(@"Failed to encode certificate signing request, function i2d_X509_REQ returned with %d", requestDataLength);
-            @throw [MscX509CommonError errorWithCode:FailedToEncodeRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToEncodeRequest];
         }
         
         [aCoder encodeBytes:requestData length:requestDataLength forKey:@"requestData"];
@@ -250,12 +250,12 @@
         
         if (myRequestLength < 1) {
             NSLog(@"Failed to read certificate signing request, function i2d_X509_REQ returned with %d", myRequestLength);
-            @throw [MscX509CommonError errorWithCode:FailedToReadRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadRequest];
         }
         
         if (otherRequestLength < 1) {
             NSLog(@"Failed to read certificate signing request, function i2d_X509_REQ returned with %d", otherRequestLength);
-            @throw [MscX509CommonError errorWithCode:FailedToReadRequest];
+            @throw [MscX509CommonLocalException exceptionWithCode:FailedToReadRequest];
         }
         
         if (myRequestLength != otherRequestLength) {

@@ -43,5 +43,7 @@ typedef NS_OPTIONS(NSUInteger, MscKeyUsage) {
 -(void)saveToPath:(NSString*)path error:(MscX509CommonError**)error;
 -(void)signWithRSAKey:(MscRSAKey*)rsaKey fingerPrintAlgorithm:(FingerPrintAlgorithm)fingerPrintAlgorithm error:(MscX509CommonError**)error;
 -(BOOL)isEqualToMscCertificate:(MscCertificate*)otherMscCertificate;
+-(NSString*)PEMFormat;
+
 
 @end
